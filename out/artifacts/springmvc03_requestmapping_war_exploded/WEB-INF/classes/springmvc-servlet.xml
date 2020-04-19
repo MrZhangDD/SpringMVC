@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+<!--    包扫描策略-->
+    <context:component-scan base-package="com.zhang.controller"/>
+<!--    默认处理器，过滤掉.css .html等静态页面-->
+    <mvc:default-servlet-handler/>
+<!--    开启MVC注解-->
+    <mvc:annotation-driven/>
+<!--    &lt;!&ndash;  处理器映射器  &ndash;&gt;-->
+<!--    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>-->
+<!--    &lt;!&ndash;   处理器适配器&ndash;&gt;-->
+<!--    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>-->
+<!--    &lt;!&ndash;   视图解析器&ndash;&gt;-->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>
